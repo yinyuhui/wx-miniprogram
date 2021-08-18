@@ -1,0 +1,19 @@
+.container {
+  padding: 0 28rpx 60rpx;
+  background-color: #f6f6f6;
+}
+
+.icon {
+  color: #6e6e6e;
+  font-size: 80rpx;
+}
+
+.red-icon {
+  color: red;
+  font-size: 60rpx;
+}
+
+.svg-icon {
+  width: 48rpx;
+  height: 48rpx;
+}

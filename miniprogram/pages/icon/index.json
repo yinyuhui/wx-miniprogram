@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "icon 使用",
+  "usingComponents": {
+    "cloud-tip-modal": "/components/cloudTipModal/index"
+  }
+}

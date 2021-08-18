@@ -1,0 +1,40 @@
+<view class="container">
+  <text class="h2">1. 微信内置 icon</text>
+  <view class="desc">微信内置 icon 只有有限的几个，通过 type 属性确定具体 icon，有 size 和 color 属性，也可以添加 class 属性用样式控制<icon class="" type="search" size="20" color="gray"></icon></view>
+  <view class="demo">
+    <icon class="" type="download" size="23" color=""></icon>
+    <icon class="" type="clear" size="30" color="red"></icon>
+  </view>
+  
+
+  <text class="h2">2. 使用图片</text>
+  <text class="desc">在图标需求较少时可以使用，不太推荐，有以下劣势</text>
+  <text class="li">1. 图标较多时，会产生很多额外的 HTTP 请求</text>
+  <text class="li">2. 不方便修改样式，如菜单图标是否激活的颜色</text>
+  <text class="li">3. 放大后图片会变虚，两倍图如果不是1/2会变虚</text>
+
+  <text class="h2">3. 使用雪碧图</text>
+  <text class="desc">需要计算每个图标的坐标，不会产生很多请求，但图片的其他劣势还是存在</text>
+  <text class="desc">一个在线 PS 网站：https://www.uupoop.com</text>
+
+  <text class="h2">4. 使用 SVG</text>
+  <text class="desc">SVG 可以保证清晰度前提下无限伸缩，每个图标都需要引入相应的 svg 文件</text>
+  <text class="desc">类似图片，不能方便地修改颜色，需要改 svg 文件内容</text>
+  <view class="demo">
+    <image class="svg-icon" src="../../images/arrow.svg" fill="red">
+      
+    </image>
+  </view>
+
+  <text class="h2">5. 使用 canvas</text>
+  <text class="desc">可以采用，但没必要，杀鸡焉用牛刀</text>
+
+  <text class="h2">6. 使用 iconfont</text>
+  <text class="desc">非常推荐，与文本类似，可以指定大小颜色。可以参考 https://www.cnblogs.com/veinyin/p/15152278.html</text>
+  <view class="demo">
+    <icon class="iconfont icon-qianbao icon"></icon>
+    <icon class="iconfont icon-ShoppingCart"></icon>
+    <icon class="iconfont icon-xitongguanli red-icon"></icon>
+  </view>
+  
+</view>
