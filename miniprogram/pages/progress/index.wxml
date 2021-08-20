@@ -1,0 +1,40 @@
+<view class="container">
+  <text class="desc">所有可视的组件都有 bindtap 属性，类似于 onclick</text>
+  <text class="desc">progress 是内置组件，用法参考文档，记录几个可能遇到的问题</text>
+  <text class="li">生成小程序工程中的 'align-items: center' 会影响到进度条样式，只有百分比，没有进度条。给 progress 设置样式 'progress { width: 100% }' 即可</text>
+  <progress percent="40" show-info stroke-width="10" border-radius="5" />
+  
+  <text class="h2">1. 进度条动画连续</text>
+  <text class="desc">将 active-mode 设置为 forwords，这样就能从结束的地方播放，默认是从头开始播放</text>
+  <view style="width: 100%">
+    <progress percent="{{percent1}}" active show-info stroke-width="10" border-radius="5" active-mode="backwards"></progress>
+    <progress percent="{{percent1}}" active show-info stroke-width="10" border-radius="5" active-mode="forwards"></progress>
+    <button class="mini-btn" type="primary" size="mini" bindtap="finish">完成</button>
+    <button class="mini-btn" type="primary" size="mini" bindtap="resetPercent">重置</button>
+  </view>
+  
+  <text class="h2">2. 下载文件时显示动态进度条</text>
+  <text class="desc">通过已下载大小和文件总大小计算 percent，绑定该属性，通过 setData 动态设置值</text>
+  <view style="width: 100%">
+    <progress percent="{{percent2}}" active show-info stroke-width="10" border-radius="5" active-mode="forwards"></progress>
+    <button class="mini-btn" type="primary" size="mini" bindtap="download">下载</button>
+  </view>
+  
+  <text class="h2">3. 设置已前进的进度条圆角</text>
+  <text class="desc">border-radius 属性设置的是进度条整体的圆角，内部已前进的进度条圆角要通过样式覆盖来修改。属于 hack 方式，要求严格的情况下可以自己实现一个</text>
+  <progress class="radius-progress" percent="34" active show-info stroke-width="10" border-radius="5"></progress>
+  
+  <text class="h2">4. 修改百分比文字样式</text>
+  <text class="desc">这个也是修改组件内部样式，与 3 类似，但有两种方案</text>
+  <text class="li">1、使用内联样式，直接在 progress 里加 style 属性</text>
+  <text class="li" style="font-weight: 600">2、覆盖组件样式，可以在全局样式中修改，推荐</text>
+  <progress percent="34" active show-info stroke-width="10" border-radius="5" style="color: red"></progress>
+  <progress class="red-text-progress" percent="34" active show-info stroke-width="10" border-radius="5"></progress>
+  
+  <text class="h2">5. 加载完成的进度条，点击按钮后重新加载</text>
+  <text class="desc">不能直接用 setData 将 percent 改成 100，这样是没用的。可以先将 percent 设置为 0，再通过 nextTick 或者定时器改成 100。也可以连续调用两次 setData，因为底层会调用 evaluateJavascript，需要时间</text>
+  <progress percent="{{percent3}}" active show-info stroke-width="10" border-radius="5"></progress>
+  <button class="mini-btn" type="primary" size="mini" bindtap="reload">重置</button>
+
+  <text class="h2">6. 环形进度条</text>
+</view>

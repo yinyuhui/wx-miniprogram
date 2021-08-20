@@ -13,6 +13,9 @@ Page({
                 item: [{
                     title: 'icon',
                     page: 'icon'
+                }, {
+                    title: 'progress',
+                    page: 'progress'
                 }]
             }
             // {

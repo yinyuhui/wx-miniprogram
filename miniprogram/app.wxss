@@ -47,3 +47,7 @@ page {
   line-height: 2.4;
   color: #888888;
 }
+
+progress {
+  width: 100%;
+}

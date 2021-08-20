@@ -1,0 +1,16 @@
+.container {
+  padding: 0 28rpx 60rpx;
+  background-color: #f6f6f6;
+}
+
+.mini-btn {
+  margin-right: 20rpx;
+}
+
+.radius-progress .wx-progress-inner-bar {
+  border-radius: 5px;
+}
+
+.red-text-progress {
+  color: red;
+} 
